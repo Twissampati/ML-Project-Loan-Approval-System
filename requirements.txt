@@ -1,0 +1,8 @@
+streamlit
+numpy
+pandas
+scikit-learn
+scikit-fuzzy
+networkx
+openpyxl
+plotly

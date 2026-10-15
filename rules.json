@@ -1,0 +1,132 @@
+[
+  {
+    "id": "R1",
+    "label": "Premium Approval",
+    "conditions": [
+      "age >= 21", "age <= 60",
+      "income >= 60000",
+      "credit_score >= 750",
+      "existing_loans == 0",
+      "loan_amount <= income * 10",
+      "liabilities <= assets * 0.3"
+    ],
+    "decision": "Approved - Premium",
+    "interest_rate": 7.5
+  },
+  {
+    "id": "R2",
+    "label": "Standard Approval",
+    "conditions": [
+      "age >= 21", "age <= 60",
+      "income >= 40000",
+      "credit_score >= 700",
+      "existing_loans <= 1",
+      "loan_amount <= income * 8",
+      "liabilities <= assets * 0.5"
+    ],
+    "decision": "Approved - Standard",
+    "interest_rate": 9.5
+  },
+  {
+    "id": "R3",
+    "label": "Basic Approval",
+    "conditions": [
+      "age >= 21", "age <= 60",
+      "income >= 30000",
+      "credit_score >= 650",
+      "existing_loans <= 2",
+      "loan_amount <= income * 6",
+      "liabilities <= assets * 0.6"
+    ],
+    "decision": "Approved - Basic",
+    "interest_rate": 11.0
+  },
+  {
+    "id": "R4",
+    "label": "Conditional - Good Credit but Low Income",
+    "conditions": [
+      "age >= 21",
+      "credit_score >= 700",
+      "income >= 20000", "income < 30000",
+      "existing_loans == 0",
+      "loan_amount <= income * 4"
+    ],
+    "decision": "Conditionally Approved",
+    "interest_rate": 13.0
+  },
+  {
+    "id": "R5",
+    "label": "Conditional - Moderate Credit",
+    "conditions": [
+      "age >= 21", "age <= 55",
+      "credit_score >= 600", "credit_score < 650",
+      "income >= 35000",
+      "existing_loans <= 1",
+      "loan_amount <= income * 5"
+    ],
+    "decision": "Conditionally Approved",
+    "interest_rate": 14.5
+  },
+  {
+    "id": "R6",
+    "label": "Conditional - High Income Compensates Low Credit",
+    "conditions": [
+      "age >= 25",
+      "income >= 80000",
+      "credit_score >= 580", "credit_score < 650",
+      "existing_loans == 0",
+      "loan_amount <= income * 4"
+    ],
+    "decision": "Conditionally Approved",
+    "interest_rate": 15.0
+  },
+  {
+    "id": "R7",
+    "label": "Rejected - Too Young",
+    "conditions": ["age < 21"],
+    "decision": "Rejected",
+    "interest_rate": null
+  },
+  {
+    "id": "R8",
+    "label": "Rejected - Too Old",
+    "conditions": ["age > 60"],
+    "decision": "Rejected",
+    "interest_rate": null
+  },
+  {
+    "id": "R9",
+    "label": "Rejected - Too Many Existing Loans",
+    "conditions": ["existing_loans >= 5"],
+    "decision": "Rejected",
+    "interest_rate": null
+  },
+  {
+    "id": "R10",
+    "label": "Rejected - Very Low Credit Score",
+    "conditions": ["credit_score < 400"],
+    "decision": "Rejected",
+    "interest_rate": null
+  },
+  {
+    "id": "R11",
+    "label": "Rejected - Loan Amount Too High",
+    "conditions": ["loan_amount > income * 20"],
+    "decision": "Rejected",
+    "interest_rate": null
+  },
+  {
+    "id": "R12",
+    "label": "Rejected - Insufficient Income",
+    "conditions": ["income < 15000"],
+    "decision": "Rejected",
+    "interest_rate": null
+  },
+  {
+    "id": "R13",
+    "label": "Rejected - High Liabilities",
+    "conditions": ["liabilities > assets * 0.9"],
+    "decision": "Rejected",
+    "interest_rate": null
+  }
+]
